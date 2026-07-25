@@ -1,0 +1,7 @@
+/tmp/
+*.tmp
+*.log
+kubeconfig
+*.kubeconfig
+istio-*/
+harbor-values-rendered.yaml

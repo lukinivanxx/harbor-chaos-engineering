@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: harbor-delay-fault
+  namespace: harbor
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - harbor-gateway
+  http:
+    - fault:
+        delay:
+          percentage:
+            value: 100
+          fixedDelay: 5s
+      route:
+        - destination:
+            host: harbor
+            port:
+              number: 80

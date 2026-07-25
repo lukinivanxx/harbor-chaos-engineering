@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: harbor-portal-abort-fault
+  namespace: harbor
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - harbor-gateway
+  http:
+    - fault:
+        abort:
+          percentage:
+            value: 100
+          httpStatus: 500
+      route:
+        - destination:
+            host: harbor-portal
+            port:
+              number: 80
