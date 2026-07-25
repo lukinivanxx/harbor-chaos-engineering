@@ -19,6 +19,7 @@ Harbor и проведение Chaos Engineering экспериментов с �
 - Доступ в интернет (для скачивания k3s, Istio, Harbor)
 
 ## Структура репозитория
+```text
 harbor-chaos/
 ├── setup.sh # полная установка одной командой
 ├── harbor-values.yaml # конфигурация Harbor для Helm
@@ -33,6 +34,7 @@ harbor-chaos/
 │ └── scenario-03-delay-registry.sh # сценарий 3
 ├── README.md
 └── CHAOS_RESEARCH.md
+```
 ## Установка
 
 Одна команда разворачивает всё с нуля:
